@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navbar } from './components/tokenisationComponents/Navbar';
 
-export const Tokenisation = () => {
+const Tokenisation = () => {
   return (
     <div className="font-inter">
       <Navbar />
@@ -9,3 +9,5 @@ export const Tokenisation = () => {
     </div>
   );
 };
+
+export default Tokenisation;

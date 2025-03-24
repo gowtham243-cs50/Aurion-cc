@@ -1,15 +1,18 @@
 import React from 'react'
-import Navbar from './components/Navbar' // Import the Navbar component
-import LandingPage from './components/LandingPage'
-import { Tokenisation } from './Tokenisation'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import CapAndTrade from './CapAndTrade'
+import Tokenisation from './Tokenisation'
+
+
 
 const App = () => {
   return (
-    <div>
-      {/* <Navbar />
-      <LandingPage /> */}
-      <Tokenisation />
-    </div>
+      <div>
+        <Routes>
+          <Route path="/capAndTrade" element={<CapAndTrade />} />
+          <Route path="/Tokenisation" element={<Tokenisation />} />
+        </Routes>
+      </div>
   )
 }
 
