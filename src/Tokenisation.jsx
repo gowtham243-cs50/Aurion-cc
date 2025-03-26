@@ -177,7 +177,7 @@ const Tokenisation = () => {
                 </div>
                 <div
                   ref={sharesScrollContainerRef}
-                  className="flex flex-nowrap space-x-4 overflow-x-auto overflow-y-hidden max-w-full h-49 scrollbar-none scroll-smooth"
+                  className="flex flex-nowrTokenGridap space-x-4 overflow-x-auto overflow-y-hidden max-w-full h-49 scrollbar-none scroll-smooth"
                   onScroll={checkScrollability}
                 >
                   <TokenGrid

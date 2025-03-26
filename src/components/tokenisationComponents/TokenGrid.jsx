@@ -7,7 +7,7 @@ export const TokenGrid = ({ tokens, type, onTileClick }) => {
   }
 
   return (
-    <div className="flex flex-nowrap gap-6 mt-6">
+    <div className="flex flex-nowrap gap-6 mt-6 w-100">
       {tokens.map((token) => (
         <TokenTile 
           key={token.id}
@@ -18,6 +18,7 @@ export const TokenGrid = ({ tokens, type, onTileClick }) => {
           priceChange={token.priceChange}
           currencySymbol={token.currencySymbol}
           onClick={() => onTileClick(token)} // Ensure this is passed correctly
+
         />
       ))}
     </div>

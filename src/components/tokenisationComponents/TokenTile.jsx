@@ -16,7 +16,7 @@ export const TokenTile = ({
 }) => {
   return (
     <div
-      className="bg-[#faf3e0] border border-green-400 shadow-md rounded-lg p-5 cursor-pointer hover:bg-[#f5ead0] hover:border-green-500 transition-all duration-300 w-72"  
+      className="bg-[#faf3e0] border border-green-400 shadow-md rounded-lg p-5 cursor-pointer hover:bg-[#f5ead0] hover:border-green-500 transition-all duration-300 "  
       onClick={onClick}
       style={scrollbarHiddenStyle}
     >
