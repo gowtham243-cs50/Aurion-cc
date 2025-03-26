@@ -2,7 +2,7 @@ import React from 'react'
 import Indices from './components/capAndTradeComponents/Indices'
 import Listing from './components/capAndTradeComponents/Listing';
 import Footer from './components/Footer';
-import  Navbar  from './components/tokenisationComponents/Navbar';
+import { Navbar } from './components/tokenisationComponents/Navbar';
 
 
 const CapAndTrade = () => {
