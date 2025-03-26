@@ -1,5 +1,8 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import InfoHeading from "./components/capAndTradeComponents/InfoHeading";
+import Navbar from "./components/tokenisationComponents/Navbar";
+import Footer from './components/Footer';
 
 const companies = [
     {
@@ -39,13 +42,9 @@ const ProjectInfo = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-green-100 to-blue-100 p-8">
-      <button 
-        onClick={() => navigate(-1)} 
-        className="mb-6 px-6 py-2 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition duration-300"
-      >
-        ← Go Back
-      </button>
+    <div className="bg-[#FAF3E0] min-h-screen">
+      <Navbar />
+      <InfoHeading />
       
       <div className="max-w-lg bg-white rounded-xl shadow-xl overflow-hidden p-6 border border-gray-200">
         <img 
@@ -63,6 +62,7 @@ const ProjectInfo = () => {
           </span>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

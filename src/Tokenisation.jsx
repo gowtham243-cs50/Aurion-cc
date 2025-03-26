@@ -4,6 +4,7 @@ import { TokenTypeButtons } from "./components/tokenisationComponents/TokenTypeB
 import { TokenGrid } from "./components/tokenisationComponents/TokenGrid";
 import { ScrollButtons } from "./components/tokenisationComponents/ScrollButtons";
 import { useNavigate } from "react-router-dom";
+import Footer from "./components/Footer";
 
 const Tokenisation = () => {
   const shareTokens = [
@@ -316,6 +317,7 @@ const Tokenisation = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
