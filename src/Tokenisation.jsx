@@ -23,7 +23,7 @@ const Tokenisation = () => {
       sdgs: ["Clean Energy", "Innovation", "Climate Action"],
       cobenefits: "Job creation, improved infrastructure, knowledge transfer",
       impactReports: "Annual Sustainability Report 2023",
-      availableCredits: "5,000",
+      availableCredits: "5,000",  
       vintageYear: "2023",
       creditPrice: 125.75,
       creditStatus: "Available",
@@ -167,7 +167,7 @@ const Tokenisation = () => {
           <div className="px-4 sm:px-6 lg:px-8">
             {activeTokenType === "shares" && (
               <div>
-                <div className="flex flex-col sm:flex-row justify-between items-center mt-4 mb-4">
+                <div className="flex flex-col sm:flex-row justify-between items-center mt-4 mb-4 w-[850px]">
                   <h2 className="text-lg sm:text-xl font-semibold">Most Popular Tokens</h2>
                   <ScrollButtons
                     onScrollLeft={scrollLeft}
@@ -178,7 +178,7 @@ const Tokenisation = () => {
                 </div>
                 <div
                   ref={sharesScrollContainerRef}
-                  className="flex flex-nowrap space-x-4 overflow-x-auto overflow-y-hidden max-w-full h-49 scrollbar-none scroll-smooth"
+                  className="flex flex-nowrap space-x-4 overflow-x-auto overflow-y-hidden max-w-full h-49 scrollbar-none scroll-smooth w-[850px]"
                   onScroll={checkScrollability}
                 >
                   <TokenGrid
@@ -188,7 +188,7 @@ const Tokenisation = () => {
                   />
                 </div>
 
-                <div className="flex flex-col sm:flex-row justify-between items-center mt-8 mb-4">
+                <div className="flex flex-col sm:flex-row justify-between items-center mt-8 mb-4 w-[850px]">
                   <h2 className="text-lg sm:text-xl font-semibold">Top Gainers</h2>
                   <ScrollButtons
                     onScrollLeft={scrollLeft}
@@ -229,7 +229,7 @@ const Tokenisation = () => {
                     Large Cap
                   </button>
                 </div>
-                <div className="flex flex-nowrap space-x-4 overflow-x-auto overflow-y-hidden max-w-full h-49 scrollbar-none scroll-smooth">
+                <div className="flex flex-nowrap space-x-4 overflow-x-auto overflow-y-hidden max-w-full h-49 scrollbar-none scroll-smooth w-[850px]">
                   <TokenGrid
                     tokens={shareTokens.filter((token) => token.priceChange > 0)}
                     type="share"
@@ -237,7 +237,7 @@ const Tokenisation = () => {
                   />
                 </div>
 
-                <div className="flex flex-col sm:flex-row justify-between items-center mt-8 mb-4">
+                <div className="flex flex-col sm:flex-row justify-between items-center mt-8 mb-4 w-[850px]">
                   <h2 className="text-lg sm:text-xl font-semibold">Top Losers</h2>
                   <ScrollButtons
                     onScrollLeft={scrollLeft}
@@ -278,7 +278,7 @@ const Tokenisation = () => {
                     Large Cap
                   </button>
                 </div>
-                <div className="flex flex-nowrap space-x-4 overflow-x-auto overflow-y-hidden max-w-full h-49 scrollbar-none scroll-smooth">
+                <div className="flex flex-nowrap space-x-4 overflow-x-auto overflow-y-hidden max-w-full h-49 scrollbar-none scroll-smooth w-[850px]">
                   <TokenGrid
                     tokens={shareTokens.filter((token) => token.priceChange < 0)}
                     type="share"
@@ -290,7 +290,7 @@ const Tokenisation = () => {
 
             {activeTokenType === "mutual-funds" && (
               <div>
-                <div className="flex flex-col sm:flex-row justify-between items-center mt-8 mb-4">
+                <div className="flex flex-col sm:flex-row justify-between items-center mt-8 mb-4 w-[850px]">
                   <h2 className="text-lg sm:text-xl font-semibold">
                     Available Mutual Fund Tokens
                   </h2>
