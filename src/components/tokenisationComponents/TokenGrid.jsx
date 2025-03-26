@@ -7,7 +7,7 @@ export const TokenGrid = ({ tokens, type, onTileClick }) => {
   }
 
   return (
-    <div className="flex flex-nowrap gap-6 mt-6 w-100">
+    <div className="flex flex-nowrap gap-6 mt-6 w-full sm:w-auto">
       {tokens.map((token) => (
         <TokenTile 
           key={token.id}

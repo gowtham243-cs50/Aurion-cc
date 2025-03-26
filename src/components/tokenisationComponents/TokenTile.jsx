@@ -16,9 +16,9 @@ export const TokenTile = ({
 }) => {
   return (
     <div
-      className="bg-[#faf3e0] border border-green-400 shadow-md rounded-lg p-5 cursor-pointer hover:bg-[#f5ead0] hover:border-green-500 transition-all duration-300 "  
+      className="bg-[#faf3e0] border border-green-400 shadow-md rounded-lg p-5 cursor-pointer hover:bg-[#f5ead0] hover:border-green-500 transition-all duration-300"
       onClick={onClick}
-      style={scrollbarHiddenStyle}
+      style={{ width: "280px", maxWidth: "100%" }} // Fixed width with responsiveness
     >
       <div className="flex items-center mb-3">
         <img src={logo} alt={`${projectName} logo`} className="w-12 h-12 mr-3 rounded-full object-cover" />

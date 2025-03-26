@@ -163,11 +163,11 @@ const Tokenisation = () => {
         <div className="max-w-6xl mx-auto">
           <TokenTypeButtons onTypeChange={handleTokenTypeChange} />
 
-          <div className="pl-11 -ml-40">
+          <div className="px-4 sm:px-6 lg:px-8">
             {activeTokenType === "shares" && (
               <div>
-                <div className="flex justify-between items-center mt-4 mb-4">
-                  <h2 className="text-xl font-semibold">Most Popular Tokens</h2>
+                <div className="flex flex-col sm:flex-row justify-between items-center mt-4 mb-4">
+                  <h2 className="text-lg sm:text-xl font-semibold">Most Popular Tokens</h2>
                   <ScrollButtons
                     onScrollLeft={scrollLeft}
                     onScrollRight={scrollRight}
@@ -177,7 +177,7 @@ const Tokenisation = () => {
                 </div>
                 <div
                   ref={sharesScrollContainerRef}
-                  className="flex flex-nowrTokenGridap space-x-4 overflow-x-auto overflow-y-hidden max-w-full h-49 scrollbar-none scroll-smooth"
+                  className="flex flex-nowrap space-x-4 overflow-x-auto overflow-y-hidden max-w-full h-49 scrollbar-none scroll-smooth"
                   onScroll={checkScrollability}
                 >
                   <TokenGrid
@@ -187,8 +187,8 @@ const Tokenisation = () => {
                   />
                 </div>
 
-                <div className="flex justify-between items-center mt-8 mb-4">
-                  <h2 className="text-xl font-semibold">Top Gainers</h2>
+                <div className="flex flex-col sm:flex-row justify-between items-center mt-8 mb-4">
+                  <h2 className="text-lg sm:text-xl font-semibold">Top Gainers</h2>
                   <ScrollButtons
                     onScrollLeft={scrollLeft}
                     onScrollRight={scrollRight}
@@ -236,8 +236,8 @@ const Tokenisation = () => {
                   />
                 </div>
 
-                <div className="flex justify-between items-center mt-8 mb-4">
-                  <h2 className="text-xl font-semibold">Top Losers</h2>
+                <div className="flex flex-col sm:flex-row justify-between items-center mt-8 mb-4">
+                  <h2 className="text-lg sm:text-xl font-semibold">Top Losers</h2>
                   <ScrollButtons
                     onScrollLeft={scrollLeft}
                     onScrollRight={scrollRight}
@@ -289,8 +289,8 @@ const Tokenisation = () => {
 
             {activeTokenType === "mutual-funds" && (
               <div>
-                <div className="flex justify-between items-center mt-8 mb-4">
-                  <h2 className="text-xl font-semibold">
+                <div className="flex flex-col sm:flex-row justify-between items-center mt-8 mb-4">
+                  <h2 className="text-lg sm:text-xl font-semibold">
                     Available Mutual Fund Tokens
                   </h2>
                   <ScrollButtons
