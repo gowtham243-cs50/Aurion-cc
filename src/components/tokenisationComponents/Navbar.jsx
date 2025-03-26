@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export const Navbar = () => {
+const Navbar = () => {
   // Add state to track scroll for dynamic effects
   const [scrolled, setScrolled] = useState(false);
 
@@ -22,10 +22,9 @@ export const Navbar = () => {
     <div className="flex justify-center w-full fixed top-0 z-50 px-4 pt-3">
       <nav
         className={`bg-[#faf3e0] shadow-lg rounded-full border-2 border-green-600 
-                           transition-all duration-500 ease-in-out w-11/12 max-w-10xl
-                           ${scrolled ? "py-2 opacity-95" : "py-3"}`}
+                     transition-all duration-600 ease-in-out w-full max-w-none
+                     ${scrolled ? "py-2 opacity-95" : "py-3"}`}
       >
-        {/* Top Section: Logo and Navigation Links */}
         <div className="flex items-center justify-between px-6 py-2">
           {/* Logo with Big Shoulders Stencil font */}
           <div className="text-3xl font-extrabold tracking-wide text-green-600 font-['Big_Shoulders_Stencil',sans-serif]">
@@ -40,13 +39,13 @@ export const Navbar = () => {
           {/* Navigation Links - Centered */}
           <div className="hidden md:flex space-x-8">
             <a
-              href="#explore"
+              href="/Tokenisation"
               className="text-xl font-bold font-inter text-green-600 hover:text-green-800 hover:underline underline-offset-4 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300"
             >
               Tokens
             </a>
             <a
-              href="#dashboard"
+              href="/capAndTrade"
               className="text-xl font-bold font-inter text-green-600 hover:text-green-800 hover:underline underline-offset-4 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300"
             >
               Cap and Trade
@@ -118,3 +117,6 @@ export const Navbar = () => {
     </div>
   );
 };
+
+
+export default Navbar;
