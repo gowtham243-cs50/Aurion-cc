@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-export const Navbar = () => {
-  // Add state to track scroll for dynamic effects
+const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Optional: Track scroll position to add effects
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
@@ -18,16 +17,19 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
-    <div className="flex justify-center w-full fixed top-0 z-50 px-4 pt-3">
+    <div className="flex justify-center w-full px-4 pt-3">
       <nav
         className={`bg-[#faf3e0] shadow-lg rounded-full border-2 border-green-600 
-                           transition-all duration-500 ease-in-out w-11/12 max-w-10xl
-                           ${scrolled ? "py-2 opacity-95" : "py-3"}`}
+                     transition-all duration-600 ease-in-out w-full max-w-none
+                     ${scrolled ? "py-2 opacity-95" : "py-3"}`}
       >
-        {/* Top Section: Logo and Navigation Links */}
         <div className="flex items-center justify-between px-6 py-2">
-          {/* Logo with Big Shoulders Stencil font */}
+          {/* Logo */}
           <div className="text-3xl font-extrabold tracking-wide text-green-600 font-['Big_Shoulders_Stencil',sans-serif]">
             <a
               href="/"
@@ -37,24 +39,50 @@ export const Navbar = () => {
             </a>
           </div>
 
-          {/* Navigation Links - Centered */}
-          <div className="hidden md:flex space-x-8">
+          {/* Mobile Menu Toggle */}
+          <button
+            className="md:hidden p-2 rounded-full bg-white text-green-600 hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle menu"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+              />
+            </svg>
+          </button>
+
+          {/* Navigation Links */}
+          <div
+            className={`${
+              isMobileMenuOpen ? "block" : "hidden"
+            } md:flex md:space-x-8 absolute md:static top-16 left-0 w-full md:w-auto bg-[#faf3e0] md:bg-transparent z-10 md:z-auto shadow-md md:shadow-none rounded-lg md:rounded-none`}
+          >
             <a
-              href="#explore"
-              className="text-xl font-bold font-inter text-green-600 hover:text-green-800 hover:underline underline-offset-4 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300"
+              href="/Tokenisation"
+              className="block md:inline-block text-xl font-bold font-inter text-green-600 hover:text-green-800 hover:underline underline-offset-4 px-6 py-2 md:p-0 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300"
             >
               Tokens
             </a>
             <a
-              href="#dashboard"
-              className="text-xl font-bold font-inter text-green-600 hover:text-green-800 hover:underline underline-offset-4 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300"
+              href="/capAndTrade"
+              className="block md:inline-block text-xl font-bold font-inter text-green-600 hover:text-green-800 hover:underline underline-offset-4 px-6 py-2 md:p-0 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300"
             >
               Cap and Trade
             </a>
           </div>
 
           {/* Right Icons */}
-          <div className="flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-4">
             <button
               aria-label="Cart"
               className="p-1.5 rounded-full bg-[#e8f5ed]/50 hover:bg-[#d9f0e3] focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300 transform hover:scale-105 text-green-600"
@@ -118,3 +146,5 @@ export const Navbar = () => {
     </div>
   );
 };
+
+export default Navbar;
