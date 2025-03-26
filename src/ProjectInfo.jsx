@@ -4,66 +4,24 @@ import { useParams, useNavigate } from "react-router-dom";
 const companies = [
     {
         id: 1,
-      name: "Eco Solutions Ltd.",
-      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&auto=format&fit=crop&q=60",
-      description: "A leading firm in sustainable energy solutions.",
-      carbonCredits: "1,500 Tons",
+        name: "Eco Solutions Ltd.",
+        image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&auto=format&fit=crop&q=60",
+        description: "A leading firm in sustainable energy solutions.",
+        carbonCredits: "1,500 Tons",
     },
     {
         id: 2,
-      name: "GreenFuture Corp.",
-      image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600&auto=format&fit=crop&q=60",
-      description: "Innovating in carbon offset and green investments.",
-      carbonCredits: "2,000 Tons",
+        name: "GreenFuture Corp.",
+        image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600&auto=format&fit=crop&q=60",
+        description: "Innovating in carbon offset and green investments.",
+        carbonCredits: "2,000 Tons",
     },
     {
         id: 3,
-      name: "SustainaTech",
-      image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&auto=format&fit=crop&q=60",
-      description: "Advancing technology for a greener planet.",
-      carbonCredits: "1,200 Tons",
-    },
-    {
-        id: 4,
-      name: "EnviroTrade",
-      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&auto=format&fit=crop&q=60",
-      description: "Specialists in carbon credit exchange.",
-      carbonCredits: "3,500 Tons",
-    },
-    {
-        id: 5,
-      name: "Nature's Balance Inc.",
-      image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&auto=format&fit=crop&q=60",
-      description: "Preserving biodiversity through sustainable practices.",
-      carbonCredits: "2,800 Tons",
-    },
-    {
-        id: 6,
-      name: "Zero Emission Partners",
-      image: "https://images.unsplash.com/photo-1521790797524-b2497295b8a0?w=600&auto=format&fit=crop&q=60",
-      description: "Helping businesses achieve carbon neutrality.",
-      carbonCredits: "1,700 Tons",
-    },
-    {
-        id: 7,
-      name: "Renewable Innovations",
-      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNvbXBhbmllc3xlbnwwfHwwfHx8MA%3D%3D",
-      description: "Developing advanced solar and wind energy solutions.",
-      carbonCredits: "3,100 Tons",
-    },
-    {
-        id: 8,
-      name: "Carbon Capture Co.",
-      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y29tcGFuaWVzfGVufDB8fDB8fHww",
-      description: "Pioneering technologies for carbon sequestration.",
-      carbonCredits: "2,200 Tons",
-    },
-    {
-        id: 9,
-      name: "FutureEarth Ventures",
-      image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNvbXBhbmllc3xlbnwwfHwwfHx8MA%3D%3D",
-      description: "Investing in a cleaner, more sustainable planet.",
-      carbonCredits: "2,500 Tons",
+        name: "SustainaTech",
+        image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&auto=format&fit=crop&q=60",
+        description: "Advancing technology for a greener planet.",
+        carbonCredits: "1,200 Tons",
     },
 ];
 
@@ -73,17 +31,37 @@ const ProjectInfo = () => {
   const company = companies.find((comp) => comp.id === parseInt(id));
 
   if (!company) {
-    return <div className="text-center text-red-500 font-bold text-xl">Company Not Found</div>;
+    return (
+      <div className="h-screen flex items-center justify-center bg-gray-100">
+        <h1 className="text-2xl font-bold text-red-500">Company Not Found</h1>
+      </div>
+    );
   }
 
   return (
-    <div className="flex flex-col items-center justify-center p-8">
-      <button onClick={() => navigate(-1)} className="mb-4 bg-[#359e53] text-white px-4 py-2 rounded-md">Go Back</button>
-      <div className="w-96 border border-[#359e53] bg-[#FAF3E0] rounded-xl p-6 shadow-md flex flex-col items-center">
-        <img src={company.image} alt={company.name} className="w-32 h-32 rounded-lg object-cover mb-3" />
-        <h2 className="text-xl font-bold text-[#2B5541]">{company.name}</h2>
-        <p className="text-gray-700 text-center">{company.description}</p>
-        <p className="font-bold text-[#EB8A25] mt-2">{company.carbonCredits}</p>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-green-100 to-blue-100 p-8">
+      <button 
+        onClick={() => navigate(-1)} 
+        className="mb-6 px-6 py-2 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition duration-300"
+      >
+        ← Go Back
+      </button>
+      
+      <div className="max-w-lg bg-white rounded-xl shadow-xl overflow-hidden p-6 border border-gray-200">
+        <img 
+          src={company.image} 
+          alt={company.name} 
+          className="w-40 h-40 rounded-full object-cover mx-auto border-4 border-green-500 shadow-lg"
+        />
+        
+        <h2 className="text-2xl font-bold text-gray-800 text-center mt-4">{company.name}</h2>
+        <p className="text-gray-600 text-center mt-2">{company.description}</p>
+        
+        <div className="mt-4 flex items-center justify-center">
+          <span className="text-lg font-semibold text-white bg-orange-500 px-4 py-2 rounded-full shadow-md">
+            {company.carbonCredits}
+          </span>
+        </div>
       </div>
     </div>
   );
