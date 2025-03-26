@@ -19,7 +19,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="flex justify-center w-full fixed top-0 z-50 px-4 pt-3">
+    <div className="flex justify-center w-full px-4 pt-3">
       <nav
         className={`bg-[#faf3e0] shadow-lg rounded-full border-2 border-green-600 
                      transition-all duration-600 ease-in-out w-full max-w-none
