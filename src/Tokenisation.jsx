@@ -1,12 +1,11 @@
 import React, { useState, useRef } from "react";
-import  Navbar   from "./components/tokenisationComponents/Navbar";
+import Navbar from "./components/tokenisationComponents/Navbar";
 import { TokenTypeButtons } from "./components/tokenisationComponents/TokenTypeButtons";
 import { TokenGrid } from "./components/tokenisationComponents/TokenGrid";
 import { ScrollButtons } from "./components/tokenisationComponents/ScrollButtons";
 import { useNavigate } from "react-router-dom";
 
 const Tokenisation = () => {
-  // Define token data directly in the component
   const shareTokens = [
     {
       id: 1,
@@ -27,7 +26,8 @@ const Tokenisation = () => {
       vintageYear: "2023",
       creditPrice: 125.75,
       creditStatus: "Available",
-      description: "Tech Innovations is a pioneering project focused on developing sustainable technology solutions that reduce carbon emissions in the tech industry. Through innovative cloud computing optimizations and energy-efficient hardware designs, this project has significantly reduced the carbon footprint of digital infrastructure."
+      description:
+        "Tech Innovations is a pioneering project focused on developing sustainable technology solutions that reduce carbon emissions in the tech industry. Through innovative cloud computing optimizations and energy-efficient hardware designs, this project has significantly reduced the carbon footprint of digital infrastructure.",
     },
     {
       id: 2,
@@ -60,7 +60,7 @@ const Tokenisation = () => {
       logo: "https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg",
       currentPrice: 156.3,
       priceChange: -0.5,
-    }
+    },
   ];
 
   const mutualFundTokens = [
@@ -87,7 +87,7 @@ const Tokenisation = () => {
       logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
       currentPrice: 62.5,
       priceChange: 0.75,
-    }
+    },
   ];
 
   const [activeTokenType, setActiveTokenType] = useState("shares");
@@ -96,40 +96,43 @@ const Tokenisation = () => {
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
   const navigate = useNavigate();
+  const [activeCapGainers, setActiveCapGainers] = useState(null);
+  const [activeCapLosers, setActiveCapLosers] = useState(null);
 
   const handleTokenTypeChange = (type) => {
     setActiveTokenType(type);
-    // Reset scroll state when changing tabs
-    setTimeout(checkScrollability, 0);
   };
 
   const scrollLeft = () => {
-    const container = activeTokenType === "shares" 
-      ? sharesScrollContainerRef.current 
-      : mutualFundsScrollContainerRef.current;
-    
+    const container =
+      activeTokenType === "shares"
+        ? sharesScrollContainerRef.current
+        : mutualFundsScrollContainerRef.current;
+
     if (container) {
-      container.scrollBy({ left: -300, behavior: 'smooth' });
+      container.scrollBy({ left: -300, behavior: "smooth" });
       setTimeout(checkScrollability, 300);
     }
   };
 
   const scrollRight = () => {
-    const container = activeTokenType === "shares" 
-      ? sharesScrollContainerRef.current 
-      : mutualFundsScrollContainerRef.current;
-    
+    const container =
+      activeTokenType === "shares"
+        ? sharesScrollContainerRef.current
+        : mutualFundsScrollContainerRef.current;
+
     if (container) {
-      container.scrollBy({ left: 300, behavior: 'smooth' });
+      container.scrollBy({ left: 300, behavior: "smooth" });
       setTimeout(checkScrollability, 300);
     }
   };
 
   const checkScrollability = () => {
-    const container = activeTokenType === "shares" 
-      ? sharesScrollContainerRef.current 
-      : mutualFundsScrollContainerRef.current;
-    
+    const container =
+      activeTokenType === "shares"
+        ? sharesScrollContainerRef.current
+        : mutualFundsScrollContainerRef.current;
+
     if (container) {
       setCanScrollLeft(container.scrollLeft > 0);
       setCanScrollRight(
@@ -143,37 +146,142 @@ const Tokenisation = () => {
     navigate("/project-details", { state: { project } });
   };
 
+  const handleCapClickGainers = (capType) => {
+    setActiveCapGainers(capType);
+    console.log(`Gainers: ${capType} Filter Clicked`);
+  };
+
+  const handleCapClickLosers = (capType) => {
+    setActiveCapLosers(capType);
+    console.log(`Losers: ${capType} Filter Clicked`);
+  };
+
   return (
-    <div className="font-inter">
+    <div className="font-inter bg-[#faf3e0]">
       <Navbar />
       <div className="p-6 bg-[#faf3e0] min-h-screen">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-2xl font-bold mb-12">Tokenisation</h1>
           <TokenTypeButtons onTypeChange={handleTokenTypeChange} />
 
           <div className="pl-11 -ml-40">
             {activeTokenType === "shares" && (
               <div>
                 <div className="flex justify-between items-center mt-4 mb-4">
-                  <h2 className="text-xl font-semibold">
-                    Most Popular Tokens
-                  </h2>
-                  <ScrollButtons 
+                  <h2 className="text-xl font-semibold">Most Popular Tokens</h2>
+                  <ScrollButtons
                     onScrollLeft={scrollLeft}
                     onScrollRight={scrollRight}
                     disableLeft={!canScrollLeft}
                     disableRight={!canScrollRight}
                   />
                 </div>
-                <div 
+                <div
                   ref={sharesScrollContainerRef}
                   className="flex flex-nowrap space-x-4 overflow-x-auto overflow-y-hidden max-w-full h-49 scrollbar-none scroll-smooth"
                   onScroll={checkScrollability}
                 >
-                  <TokenGrid 
-                    tokens={shareTokens} 
-                    type="share" 
-                    onTileClick={handleTileClick} 
+                  <TokenGrid
+                    tokens={shareTokens}
+                    type="share"
+                    onTileClick={handleTileClick}
+                  />
+                </div>
+
+                <div className="flex justify-between items-center mt-8 mb-4">
+                  <h2 className="text-xl font-semibold">Top Gainers</h2>
+                  <ScrollButtons
+                    onScrollLeft={scrollLeft}
+                    onScrollRight={scrollRight}
+                    disableLeft={!canScrollLeft}
+                    disableRight={!canScrollRight}
+                  />
+                </div>
+                <div className="flex justify-start space-x-2 mb-2">
+                  <button
+                    className={`px-4 py-2 rounded-full border ${
+                      activeCapGainers === "Small Cap"
+                        ? "text-green-500 border-green-500 bg-[#faf3e0] font-bold"
+                        : "bg-green-500 text-[#faf3e0] border-green-500"
+                    } hover:bg-green-100`}
+                    onClick={() => handleCapClickGainers("Small Cap")}
+                  >
+                    Small Cap
+                  </button>
+                  <button
+                    className={`px-4 py-2 rounded-full border ${
+                      activeCapGainers === "Mid Cap"
+                        ? "text-green-500 border-green-500 bg-[#faf3e0] font-bold"
+                        : "bg-green-500 text-[#faf3e0] border-green-500"
+                    } hover:bg-green-100`}
+                    onClick={() => handleCapClickGainers("Mid Cap")}
+                  >
+                    Mid Cap
+                  </button>
+                  <button
+                    className={`px-4 py-2 rounded-full border ${
+                      activeCapGainers === "Large Cap"
+                        ? "text-green-500 border-green-500 bg-[#faf3e0] font-bold"
+                        : "bg-green-500 text-[#faf3e0] border-green-500"
+                    } hover:bg-green-100`}
+                    onClick={() => handleCapClickGainers("Large Cap")}
+                  >
+                    Large Cap
+                  </button>
+                </div>
+                <div className="flex flex-nowrap space-x-4 overflow-x-auto overflow-y-hidden max-w-full h-49 scrollbar-none scroll-smooth">
+                  <TokenGrid
+                    tokens={shareTokens.filter((token) => token.priceChange > 0)}
+                    type="share"
+                    onTileClick={handleTileClick}
+                  />
+                </div>
+
+                <div className="flex justify-between items-center mt-8 mb-4">
+                  <h2 className="text-xl font-semibold">Top Losers</h2>
+                  <ScrollButtons
+                    onScrollLeft={scrollLeft}
+                    onScrollRight={scrollRight}
+                    disableLeft={!canScrollLeft}
+                    disableRight={!canScrollRight}
+                  />
+                </div>
+                <div className="flex justify-start space-x-2 mb-2 ">
+                  <button
+                    className={`px-4 py-2 rounded-full border ${
+                      activeCapLosers === "Small Cap"
+                        ? "text-green-500 border-green-500 bg-[#faf3e0] font-bold"
+                        : "bg-green-500 text-[#faf3e0] border-green-500"
+                    } hover:bg-green-100`}
+                    onClick={() => handleCapClickLosers("Small Cap")}
+                  >
+                    Small Cap
+                  </button>
+                  <button
+                    className={`px-4 py-2 rounded-full border ${
+                      activeCapLosers === "Mid Cap"
+                        ? "text-green-500 border-green-500 bg-[#faf3e0] font-bold"
+                        : "bg-green-500 text-[#faf3e0] border-green-500"
+                    } hover:bg-green-100`}
+                    onClick={() => handleCapClickLosers("Mid Cap")}
+                  >
+                    Mid Cap
+                  </button>
+                  <button
+                    className={`px-4 py-2 rounded-full border ${
+                      activeCapLosers === "Large Cap"
+                        ? "text-green-500 border-green-500 bg-[#faf3e0] font-bold"
+                        : "bg-green-500 text-[#faf3e0] border-green-500"
+                    } hover:bg-green-100`}
+                    onClick={() => handleCapClickLosers("Large Cap")}
+                  >
+                    Large Cap
+                  </button>
+                </div>
+                <div className="flex flex-nowrap space-x-4 overflow-x-auto overflow-y-hidden max-w-full h-49 scrollbar-none scroll-smooth">
+                  <TokenGrid
+                    tokens={shareTokens.filter((token) => token.priceChange < 0)}
+                    type="share"
+                    onTileClick={handleTileClick}
                   />
                 </div>
               </div>
@@ -185,22 +293,22 @@ const Tokenisation = () => {
                   <h2 className="text-xl font-semibold">
                     Available Mutual Fund Tokens
                   </h2>
-                  <ScrollButtons 
+                  <ScrollButtons
                     onScrollLeft={scrollLeft}
                     onScrollRight={scrollRight}
                     disableLeft={!canScrollLeft}
                     disableRight={!canScrollRight}
                   />
                 </div>
-                <div 
+                <div
                   ref={mutualFundsScrollContainerRef}
                   className="flex flex-nowrap space-x-4 overflow-x-auto overflow-y-hidden max-w-full h-48 scrollbar-none scroll-smooth"
                   onScroll={checkScrollability}
                 >
-                  <TokenGrid 
-                    tokens={mutualFundTokens} 
-                    type="mutual fund" 
-                    onTileClick={handleTileClick} 
+                  <TokenGrid
+                    tokens={mutualFundTokens}
+                    type="mutual fund"
+                    onTileClick={handleTileClick}
                   />
                 </div>
               </div>

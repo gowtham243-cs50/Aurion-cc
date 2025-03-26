@@ -20,19 +20,19 @@ const ProjectDetails = () => {
 
   if (!project) {
     return (
-      <>
+      <div className="bg-[#faf3e0] ">
         <Navbar />
-        <div className="p-6 bg-[#faf3e0] min-h-screen font-inter">
+        <div className="p-6 bg-[#faf3e0] min-h-screen font-inter  ">
           <div className="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-8">
             <p className="text-center text-gray-600">No project details available.</p>
           </div>
         </div>
-      </>
+      </div>
     );
   }
 
   return (
-    <>
+    <div className="bg-green-700">
       <Navbar />
       <div className="bg-[#faf3e0] min-h-screen font-inter">
         {/* Hero Section with Image Background */}
@@ -275,7 +275,7 @@ const ProjectDetails = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
