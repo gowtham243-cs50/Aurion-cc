@@ -3,6 +3,7 @@ import Navbar from "./components/tokenisationComponents/Navbar";
 import { TokenTypeButtons } from "./components/tokenisationComponents/TokenTypeButtons";
 import { TokenGrid } from "./components/tokenisationComponents/TokenGrid";
 import { ScrollButtons } from "./components/tokenisationComponents/ScrollButtons";
+import ScreenerButton from "./components/tokenisationComponents/ScreenerButton";
 import { useNavigate } from "react-router-dom";
 import Footer from "./components/Footer";
 
@@ -162,7 +163,10 @@ const Tokenisation = () => {
       <Navbar />
       <div className="p-6 bg-[#faf3e0] min-h-screen">
         <div className="max-w-6xl mx-auto">
-          <TokenTypeButtons onTypeChange={handleTokenTypeChange} />
+          <div className="flex justify-between items-center mb-6">
+            <TokenTypeButtons onTypeChange={handleTokenTypeChange} />
+            <ScreenerButton />
+          </div>
 
           <div className="px-4 sm:px-6 lg:px-8">
             {activeTokenType === "shares" && (
