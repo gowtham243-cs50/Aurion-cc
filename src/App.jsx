@@ -1,22 +1,19 @@
 import React from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from './components/profilepage/Sidebar';
 import PersonalInfo from './components/profilepage/PersonalInfo';
 import AccountInfo from './components/profilepage/AccountInfo';
 import SecuritySettings from './components/profilepage/SecuritySettings';
 import ActivityMarket from './components/profilepage/ActivityMarket';
 import './App.css';
-import CapAndTrade from './CapAndTrade'
-import Tokenisation from './Tokenisation'
+import CapAndTrade from './CapAndTrade';
+import Tokenisation from './Tokenisation';
 import ProjectInfo from "./ProjectInfo";
 import ProjectDetails from "./ProjectDetails"
 import Dashboard from './Dashboard';
 import Wallet from './components/profilepage/wallet';
 import Portfolio from './components/profilepage/portfolio'; 
 const App = () => {
-  const location = useLocation();
-  const isDashboardRoute = ['/personal-info', '/account-info', '/security-settings', '/activity-market'].includes(location.pathname);
-
   return (
     
       <div>

@@ -11,66 +11,103 @@ const Listing = () => {
       id: 1,
       name: "Eco Solutions Ltd.",
       image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&auto=format&fit=crop&q=60",
-      description: "A leading firm in sustainable energy solutions.",
+      description: "A leading firm in sustainable energy solutions, providing innovative ways to reduce carbon footprints.",
       carbonCredits: "1,500 Tons",
+      location: "United Kingdom",
+      website: "https://www.ecosolutions.com",
+      tradingStatus: "Active",
+      pricePerTon: "$45"
     },
     {
       id: 2,
       name: "GreenFuture Corp.",
       image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600&auto=format&fit=crop&q=60",
-      description: "Innovating in carbon offset and green investments.",
+      description: "Innovating in carbon offset and green investments, helping industries transition to sustainability.",
       carbonCredits: "2,000 Tons",
+      location: "United States",
+      website: "https://www.greenfuturecorp.com",
+      tradingStatus: "Pending",
+      pricePerTon: "$50"
     },
     {
       id: 3,
       name: "SustainaTech",
       image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&auto=format&fit=crop&q=60",
-      description: "Advancing technology for a greener planet.",
+      description: "Advancing technology for a greener planet, focusing on AI-driven emission reduction.",
       carbonCredits: "1,200 Tons",
+      location: "Germany",
+      website: "https://www.sustainatech.com",
+      tradingStatus: "Active",
+      pricePerTon: "$42"
     },
     {
       id: 4,
       name: "EnviroTrade",
       image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&auto=format&fit=crop&q=60",
-      description: "Specialists in carbon credit exchange.",
+      description: "Specialists in carbon credit exchange, facilitating smooth trading between businesses.",
       carbonCredits: "3,500 Tons",
+      location: "Canada",
+      website: "https://www.envirotrade.com",
+      tradingStatus: "Active",
+      pricePerTon: "$48"
     },
     {
       id: 5,
       name: "Nature's Balance Inc.",
       image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&auto=format&fit=crop&q=60",
-      description: "Preserving biodiversity through sustainable practices.",
+      description: "Preserving biodiversity through sustainable practices and responsible resource management.",
       carbonCredits: "2,800 Tons",
+      location: "Australia",
+      website: "https://www.naturesbalance.com",
+      tradingStatus: "Pending",
+      pricePerTon: "$47"
     },
     {
       id: 6,
       name: "Zero Emission Partners",
       image: "https://images.unsplash.com/photo-1521790797524-b2497295b8a0?w=600&auto=format&fit=crop&q=60",
-      description: "Helping businesses achieve carbon neutrality.",
+      description: "Helping businesses achieve carbon neutrality through investment in clean energy solutions.",
       carbonCredits: "1,700 Tons",
+      location: "Sweden",
+      website: "https://www.zeroemissionpartners.com",
+      tradingStatus: "Active",
+      pricePerTon: "$44"
     },
     {
       id: 7,
       name: "Renewable Innovations",
-      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNvbXBhbmllc3xlbnwwfHwwfHx8MA%3D%3D",
-      description: "Developing advanced solar and wind energy solutions.",
+      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&auto=format&fit=crop&q=60",
+      description: "Developing advanced solar and wind energy solutions for a more sustainable future.",
       carbonCredits: "3,100 Tons",
+      location: "Norway",
+      website: "https://www.renewableinnovations.com",
+      tradingStatus: "Active",
+      pricePerTon: "$49"
     },
     {
       id: 8,
       name: "Carbon Capture Co.",
-      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y29tcGFuaWVzfGVufDB8fDB8fHww",
-      description: "Pioneering technologies for carbon sequestration.",
+      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&auto=format&fit=crop&q=60",
+      description: "Pioneering technologies for carbon sequestration, reducing atmospheric CO₂ efficiently.",
       carbonCredits: "2,200 Tons",
+      location: "Japan",
+      website: "https://www.carboncaptureco.com",
+      tradingStatus: "Pending",
+      pricePerTon: "$46"
     },
     {
       id: 9,
       name: "FutureEarth Ventures",
-      image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNvbXBhbmllc3xlbnwwfHwwfHx8MA%3D%3D",
-      description: "Investing in a cleaner, more sustainable planet.",
+      image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&auto=format&fit=crop&q=60",
+      description: "Investing in a cleaner, more sustainable planet through large-scale environmental projects.",
       carbonCredits: "2,500 Tons",
-    },
+      location: "Netherlands",
+      website: "https://www.futureearthventures.com",
+      tradingStatus: "Active",
+      pricePerTon: "$51"
+    }
   ];
+  
 
   return (
     <div className="p-8 flex flex-row justify-between items-start w-full max-w-6xl">
