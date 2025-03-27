@@ -10,6 +10,7 @@ import CapAndTrade from './CapAndTrade'
 import Tokenisation from './Tokenisation'
 import ProjectInfo from "./ProjectInfo";
 import ProjectDetails from "./ProjectDetails"
+import Dashboard from './Dashboard';
 const App = () => {
   const location = useLocation();
   const isDashboardRoute = ['/personal-info', '/account-info', '/security-settings', '/activity-market'].includes(location.pathname);
@@ -22,11 +23,7 @@ const App = () => {
             <Route path="/Tokenisation" element={<Tokenisation />} />
             <Route path="/project/:id" element={<ProjectInfo />} />
             <Route path="/project-details" element={<ProjectDetails />} />
-            <Route path="/" element={<PersonalInfo />} />
-            <Route path="/personal-info" element={<PersonalInfo />} />
-            <Route path="/account-info" element={<AccountInfo />} />
-            <Route path="/security-settings" element={<SecuritySettings />} />
-            <Route path="/activity-market" element={<ActivityMarket />} />
+            <Route path="/*" element={<Dashboard />} />
           </Routes>
         </div>
  

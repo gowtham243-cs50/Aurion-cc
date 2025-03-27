@@ -1,0 +1,38 @@
+.dashboard-container {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+  }
+  
+  .dashboard-content {
+    margin-left: 280px; /* Adjust based on sidebar width */
+    padding: 20px; /* Padding for content */
+    flex: 1; /* Take the remaining space */
+    background-color: #f0f8ff; /* Light background for the content area */
+    margin-top: 50px; /* Adjust for navbar height */
+  }
+  
+  .sidebar {
+    width: 280px; /* Adjust width as needed */
+    height: calc(100vh - 50px); /* Full height minus navbar height */
+    background: #f8faf6; /* Light background color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding for spacing */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: fixed; /* Fixed position to stay in view */
+    top: 50px; /* Position below the navbar */
+    left: 0; /* Position from the left */
+    z-index: 1000; /* Ensure it appears above other content */
+  }
+
+  @media (max-width: 768px) {
+    .dashboard-content {
+      margin-left: 0; /* Remove margin for smaller screens */
+      padding: 10px; /* Adjust padding */
+    }
+
+    .sidebar {
+      width: 100%; /* Full width for sidebar on small screens */
+      position: relative; /* Change position for small screens */
+      height: auto; /* Allow height to adjust */
+    }
+  }
