@@ -13,6 +13,7 @@ import ProjectDetails from "./ProjectDetails"
 import Dashboard from './Dashboard';
 import Wallet from './components/profilepage/wallet';
 import Portfolio from './components/profilepage/portfolio'; 
+import Screener from './screener';
 const App = () => {
   return (
     
@@ -25,6 +26,7 @@ const App = () => {
             <Route path="/*" element={<Dashboard />} />
             <Route path="/wallet" element={<Wallet />} />
             <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/screener" element={<Screener />} />
           </Routes>
         </div>
  
