@@ -43,4 +43,66 @@
 
 .personal-info p {
   margin-bottom: 10px;
+}
+
+.personal-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.personal-info-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  height: auto;
+}
+
+.personal-info-card h2 {
+  color: #2B5541;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-column {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.info-column:last-child {
+  margin-right: 0;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  color: #555;
+  font-size: 16px;
+  margin: 15px 0;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s;
+}
+
+.info-item:hover {
+  background-color: #e8f5e9;
+}
+
+.info-item span {
+  font-weight: light;
+  color: #2B5541;
+  margin-bottom: 5px;
+}
+
+.info-item strong {
+  font-weight: normal;
+  color: #333;
 } 

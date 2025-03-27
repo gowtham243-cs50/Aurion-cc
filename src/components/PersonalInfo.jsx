@@ -3,15 +3,38 @@ import './PersonalInfo.css';
 
 const PersonalInfo = () => {
   return (
-    <div className="personal-info">
+    <div className="personal-info-card">
       <h2>Personal Information</h2>
-      <p>Full Name: Donald Trump</p>
-      <p>Email: user@example.com</p>
-      <p>Phone: ****1709</p>
-      <p>Date of Birth: 01/01/1980</p>
-      <p>Residential Address: 123 Main St, City, Country</p>
-      <p>Aadhaar/PAN: ****181B</p>
-      <p>Notification Preferences: Email, SMS, Push</p>
+      <div className="info-container">
+        <div className="info-column">
+          <div className="info-item">
+            <span>Full Name:</span>
+            <strong>Donald Trump</strong>
+          </div>
+          <div className="info-item">
+            <span>Email:</span>
+            <strong>user@example.com</strong>
+          </div>
+          <div className="info-item">
+            <span>Phone:</span>
+            <strong>****1709</strong>
+          </div>
+        </div>
+        <div className="info-column">
+          <div className="info-item">
+            <span>Date of Birth:</span>
+            <strong>01/01/1980</strong>
+          </div>
+          <div className="info-item">
+            <span>Residential Address:</span>
+            <strong>123 Main St, City, Country</strong>
+          </div>
+          <div className="info-item">
+            <span>Aadhaar/PAN:</span>
+            <strong>****181B</strong>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

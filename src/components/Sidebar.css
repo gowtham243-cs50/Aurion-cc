@@ -1,73 +1,84 @@
 .sidebar {
-  width: 250px;
-  background-color: #f0f8ff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  height: calc(100vh - 40px);
+  background: #f8faf6;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(43, 85, 65, 0.08);
   position: fixed;
+  top: 20px;
   left: 0;
-  top: 0;
-  height: 100vh;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 32px;
+  border: 1px solid rgba(43, 85, 65, 0.1);
 }
 
 .user-overview {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(43, 85, 65, 0.1);
 }
 
 .profile-picture {
-  width: 100px;
-  height: 100px;
-  background-color: #007bff;
-  color: #fff;
+  width: 80px;
+  height: 80px;
+  background: #e8f5e9;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 24px;
-  margin-bottom: 10px;
+  color: #2B5541;
+  margin-bottom: 16px;
+  border: 2px solid rgba(43, 85, 65, 0.1);
 }
 
 .user-name {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2B5541;
+  margin: 0;
+  margin-bottom: 4px;
 }
 
-.account-status, .membership-level {
-  font-size: 16px;
-  color: #555;
+.membership-level {
+  font-size: 14px;
+  color: #4a7c5f;
+  margin: 0;
 }
 
-.sidebar h2 {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.sidebar ul {
+.sidebar-nav ul {
   list-style: none;
   padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.sidebar li {
-  margin-bottom: 10px;
-}
-
-.sidebar a {
-  color: #333;
+.sidebar-nav li a {
+  display: block;
+  padding: 12px 16px;
+  color: #4a7c5f;
   text-decoration: none;
-  font-size: 16px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  font-size: 15px;
 }
 
-.sidebar a:hover {
-  color: #007bff;
+.sidebar-nav li a:hover {
+  background: #e8f5e9;
+  color: #2B5541;
+}
+
+.sidebar-nav li a.active {
+  background: #c8e6c9;
+  color: #2B5541;
+  font-weight: 500;
 }
 
 @media (max-width: 768px) {
@@ -75,6 +86,10 @@
     width: 100%;
     height: auto;
     position: relative;
-    margin-bottom: 20px;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    top: 0;
+    border: none;
   }
 } 

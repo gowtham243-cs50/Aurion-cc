@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -121,6 +121,7 @@ const Navbar = () => {
                 />
               </svg>
             </button>
+            <Link to="/personal-info">
             <button
               aria-label="Profile"
               className="p-1.5 rounded-full bg-white text-green-600 hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300 transform hover:scale-105 shadow-sm"
@@ -140,6 +141,7 @@ const Navbar = () => {
                 />
               </svg>
             </button>
+            </Link>
           </div>
         </div>
       </nav>

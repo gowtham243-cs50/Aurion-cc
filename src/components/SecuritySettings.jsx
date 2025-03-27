@@ -3,12 +3,30 @@ import './SecuritySettings.css';
 
 const SecuritySettings = () => {
   return (
-    <div className="security-settings">
+    <div className="security-settings-card">
       <h2>Security & Settings</h2>
-      <p>2FA Authentication: Enabled</p>
-      <p>Password Change / Reset</p>
-      <p>Linked Accounts: UPI, Bank, Other Wallets</p>
-      <p>Consent & Privacy Settings: Data sharing preferences</p>
+      <div className="info-container">
+        <div className="info-column">
+          <div className="info-item">
+            <span>2FA Authentication:</span>
+            <strong>Enabled</strong>
+          </div>
+          <div className="info-item">
+            <span>Password Change / Reset:</span>
+            <strong>Available</strong>
+          </div>
+        </div>
+        <div className="info-column">
+          <div className="info-item">
+            <span>Linked Accounts:</span>
+            <strong>UPI, Bank, Other Wallets</strong>
+          </div>
+          <div className="info-item">
+            <span>Consent & Privacy Settings:</span>
+            <strong>Data sharing preferences</strong>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
