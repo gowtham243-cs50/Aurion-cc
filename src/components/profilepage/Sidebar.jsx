@@ -13,8 +13,8 @@ const Sidebar = () => {
     <div className="sidebar">
       <div className="user-overview">
         <div className="profile-picture">X</div>
-        <h1 className="user-name">donald trump</h1>
-        <p className="membership-level">Investor, Project Owner</p>
+        <h1 className="user-name">Donald Trump</h1>
+        <p className="membership-level">Investor</p>
       </div>
       <nav className="sidebar-nav">
         <ul>
@@ -48,6 +48,22 @@ const Sidebar = () => {
               className={isActive('/activity-market') ? 'active' : ''}
             >
               Activity & Market
+            </Link>
+          </li>
+          <li>
+            <Link 
+              to="/wallet" 
+              className={isActive('/wallet') ? 'active' : ''}
+            >
+              Wallet
+            </Link>
+          </li>
+          <li>
+            <Link 
+              to="/portfolio" 
+              className={isActive('/portfolio') ? 'active' : ''}
+            >
+              Portfolio
             </Link>
           </li>
         </ul>

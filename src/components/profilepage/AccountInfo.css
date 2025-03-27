@@ -1,7 +1,10 @@
-.account-info {
+.account-info-card {
   background-color: #f0f8ff;
   padding: 20px;
   border-radius: 8px;
+  border-radius: 10px;
+  border-color: #16A34A;
+  border-width: 2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 

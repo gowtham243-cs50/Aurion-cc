@@ -1,18 +1,21 @@
 .sidebar {
   width: 280px;
-  height: calc(100vh - 40px);
-  background: #f8faf6;
-  border-radius: 20px;
+  height: auto;
+  max-height: calc(100vh - 50px);
+  background: #FAF3E0;
+  border: 2px solid #16A34A;
+  border-radius: 10px;
+  padding: 20px;
   margin: 20px;
-  padding: 24px;
-  box-shadow: 0 4px 20px rgba(43, 85, 65, 0.08);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   position: fixed;
-  top: 20px;
+  top: 50px;
   left: 0;
+  z-index: 1000;
   display: flex;
   flex-direction: column;
   gap: 32px;
-  border: 1px solid rgba(43, 85, 65, 0.1);
+  overflow-y: auto;
 }
 
 .user-overview {

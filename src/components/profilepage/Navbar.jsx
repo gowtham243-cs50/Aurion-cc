@@ -102,6 +102,7 @@ const Navbar = () => {
                 />
               </svg>
             </button>
+            <Link to="/wallet">
             <button
               aria-label="Wallet"
               className="p-1.5 rounded-full bg-[#e8f5ed]/50 hover:bg-[#d9f0e3] focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300 transform hover:scale-105 text-green-600"
@@ -121,6 +122,7 @@ const Navbar = () => {
                 />
               </svg>
             </button>
+            </Link>
             <Link to="/personal-info">
             <button
               aria-label="Profile"

@@ -11,6 +11,8 @@ import Tokenisation from './Tokenisation'
 import ProjectInfo from "./ProjectInfo";
 import ProjectDetails from "./ProjectDetails"
 import Dashboard from './Dashboard';
+import Wallet from './components/profilepage/wallet';
+import Portfolio from './components/profilepage/portfolio'; 
 const App = () => {
   const location = useLocation();
   const isDashboardRoute = ['/personal-info', '/account-info', '/security-settings', '/activity-market'].includes(location.pathname);
@@ -24,6 +26,8 @@ const App = () => {
             <Route path="/project/:id" element={<ProjectInfo />} />
             <Route path="/project-details" element={<ProjectDetails />} />
             <Route path="/*" element={<Dashboard />} />
+            <Route path="/wallet" element={<Wallet />} />
+            <Route path="/portfolio" element={<Portfolio />} />
           </Routes>
         </div>
  

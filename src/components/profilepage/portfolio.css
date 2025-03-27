@@ -1,0 +1,87 @@
+/* Ensure the navbar stays full-width */
+.portfolio-page {
+    width: 100%;
+  }
+  
+  /* Portfolio Container (Without Affecting Navbar) */
+  .portfolio-container {
+    max-width: 500px;
+    margin: 60px auto; /* Added margin to avoid overlap with navbar */
+    padding: 20px;
+    background-color: #FAF3E0;
+    border: 2px solid #16A34A;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Title */
+  .portfolio-container h2 {
+    color: #2B5541;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  /* Portfolio Description */
+  .portfolio-description {
+    font-size: 18px;
+    color: #4A7C5F;
+    margin: 10px 0;
+  }
+  
+  /* Investment Section */
+  .portfolio-container h3 {
+    color: #2B5541;
+    margin: 20px 0 10px;
+  }
+  
+  /* Investment List */
+  .investment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  /* Investment Card */
+  .investment-card {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    font-weight: 500;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .investment-card:hover {
+    transform: scale(1.03);
+  }
+  
+  /* Navbar (Already Defined but Ensuring it’s Fixed Correctly) */
+  .navbar {
+    background-color: #16A34A;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+  
+  /* Investment Name */
+  .investment-name {
+    font-weight: bold;
+  }
+  
+  /* Investment Amount */
+  .investment-amount {
+    font-weight: bold;
+    color: #16A34A;
+  }
+  

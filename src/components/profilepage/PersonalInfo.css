@@ -20,7 +20,7 @@
 .profile-picture {
   width: 100px;
   height: 100px;
-  background-color: #007bff;
+  background-color: #8fabca;
   color: #fff;
   border-radius: 50%;
   display: flex;
@@ -54,6 +54,8 @@
 .personal-info-card {
   background-color: #ffffff;
   border-radius: 10px;
+  border-color: #16A34A;
+  border-width: 2px;
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   margin: 20px;
