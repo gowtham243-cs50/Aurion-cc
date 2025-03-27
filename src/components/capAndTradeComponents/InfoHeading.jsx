@@ -2,14 +2,14 @@ import React from 'react';
 
 const InfoHeading = () => {
     return (
-        <div className="bg-[#FAF3E0] p-5 md:p-8 font-sans">
-            <h1 className="text-[#2B5541] font-bold text-2xl md:text-4xl m-0">
+        <div className="bg-[#FAF3E0] p-6 md:p-10 font-sans">
+            <h1 className="text-[#2B5541] font-bold text-3xl md:text-5xl font-playfair leading-tight tracking-wide">
                 Transform Emissions into Assets
             </h1>
-            <div className="flex justify-start items-center mt-4 md:mt-6 ml-40 md:ml-80">
-                <div className="w-8 h-[2px] bg-[#FE6D73] mr-2 mt-2"></div>
-                <h2 className="text-[#FE6D73] text-sm md:text-lg relative top-1">
-                    Trade | Offset |  Thrive 
+            <div className="flex justify-start items-center mt-6 md:mt-8 ml-80 md:ml-140">
+                <div className="w-10 h-[3px] bg-[#FE6D73] mr-3"></div>
+                <h2 className="text-[#FE6D73] text-lg md:text-xl font-poppins font-medium tracking-wider">
+                    Trade | Offset | Thrive
                 </h2>
             </div>
         </div>
@@ -17,6 +17,7 @@ const InfoHeading = () => {
 };
 
 export default InfoHeading;
+
 
 
 
