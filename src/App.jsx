@@ -9,41 +9,24 @@ import './App.css';
 import CapAndTrade from './CapAndTrade';
 import Tokenisation from './Tokenisation';
 import ProjectInfo from "./ProjectInfo";
-import ProjectDetails from "./ProjectDetails";
-import Screener from './screener';
-import ProfilePage from './profilepage';
-
-// Dashboard wrapper to handle the sidebar logic
-const DashboardLayout = ({ children }) => {
-  // Sidebar will be rendered for dashboard routes
-  return (
-    <div className="flex">
-      <Sidebar />
-      <div className="flex-1">
-        {children}
-      </div>
-    </div>
-  );
-};
-
+import ProjectDetails from "./ProjectDetails"
 const App = () => {
   return (
     
-      <Routes>
-        <Route path="/capAndTrade" element={<CapAndTrade />} />
-        <Route path="/Tokenisation" element={<Tokenisation />} />
-        <Route path="/project/:id" element={<ProjectInfo />} />
-        <Route path="/project-details" element={<ProjectDetails />} />
-        <Route path="/screener" element={<Screener />} />
-        
-        {/* Dashboard routes with sidebar */}
-        <Route path="/personal-info" element={<DashboardLayout><PersonalInfo /></DashboardLayout>} />
-        <Route path="/account-info" element={<DashboardLayout><AccountInfo /></DashboardLayout>} />
-        <Route path="/security-settings" element={<DashboardLayout><SecuritySettings /></DashboardLayout>} />
-        <Route path="/activity-market" element={<DashboardLayout><ActivityMarket /></DashboardLayout>} />
-        <Route path="/profile-page" element={<ProfilePage />} />
-      </Routes>
-    
+      <div>
+          <Routes>
+            <Route path="/capAndTrade" element={<CapAndTrade />} />
+            <Route path="/Tokenisation" element={<Tokenisation />} />
+            <Route path="/project/:id" element={<ProjectInfo />} />
+            <Route path="/project-details" element={<ProjectDetails />} />
+            <Route path="/" element={<PersonalInfo />} />
+            <Route path="/personal-info" element={<PersonalInfo />} />
+            <Route path="/account-info" element={<AccountInfo />} />
+            <Route path="/security-settings" element={<SecuritySettings />} />
+            <Route path="/activity-market" element={<ActivityMarket />} />
+          </Routes>
+        </div>
+ 
   );
 };
 
