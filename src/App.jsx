@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import Sidebar from './components/Sidebar';
-import PersonalInfo from './components/PersonalInfo';
-import AccountInfo from './components/AccountInfo';
-import SecuritySettings from './components/SecuritySettings';
-import ActivityMarket from './components/ActivityMarket';
+import Sidebar from './components/profilepage/Sidebar';
+import PersonalInfo from './components/profilepage/PersonalInfo';
+import AccountInfo from './components/profilepage/AccountInfo';
+import SecuritySettings from './components/profilepage/SecuritySettings';
+import ActivityMarket from './components/profilepage/ActivityMarket';
 import './App.css';
 import CapAndTrade from './CapAndTrade'
 import Tokenisation from './Tokenisation'
@@ -15,10 +15,8 @@ const App = () => {
   const isDashboardRoute = ['/personal-info', '/account-info', '/security-settings', '/activity-market'].includes(location.pathname);
 
   return (
-    <div className="app-container">
-      <div className="main-content">
-        {isDashboardRoute && <Sidebar />}
-        <div className={`content ${isDashboardRoute ? 'with-sidebar' : ''}`}>
+    
+      <div>
           <Routes>
             <Route path="/capAndTrade" element={<CapAndTrade />} />
             <Route path="/Tokenisation" element={<Tokenisation />} />
@@ -31,8 +29,7 @@ const App = () => {
             <Route path="/activity-market" element={<ActivityMarket />} />
           </Routes>
         </div>
-      </div>
-    </div>
+ 
   );
 };
 
